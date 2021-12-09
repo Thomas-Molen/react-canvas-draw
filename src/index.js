@@ -404,6 +404,10 @@ export default class CanvasDraw extends PureComponent {
 
   handleWheel = (e) => {
     try{
+      if (_this.interactionSM == null)
+        {
+          _this.interactionSM = new DefaultState();
+        }
       this.interactionSM = this.interactionSM.handleMouseWheel(e, this);
     }
     catch(e)
@@ -414,6 +418,10 @@ export default class CanvasDraw extends PureComponent {
 
   handleDrawStart = (e) => {
     try{
+      if (_this.interactionSM == null)
+        {
+          _this.interactionSM = new DefaultState();
+        }
       this.interactionSM = this.interactionSM.handleDrawStart(e, this);
       this.mouseHasMoved = true;
     }
@@ -425,6 +433,10 @@ export default class CanvasDraw extends PureComponent {
 
   handleDrawMove = (e) => {
     try {
+      if (_this.interactionSM == null)
+        {
+          _this.interactionSM = new DefaultState();
+        }
       this.interactionSM = this.interactionSM.handleDrawMove(e, this);
       this.mouseHasMoved = true;
     }
@@ -436,6 +448,10 @@ export default class CanvasDraw extends PureComponent {
 
   handleDrawEnd = (e) => {
     try {
+      if (_this.interactionSM == null)
+        {
+          _this.interactionSM = new DefaultState();
+        }
       this.interactionSM = this.interactionSM.handleDrawEnd(e, this);
       this.mouseHasMoved = true;
     }
